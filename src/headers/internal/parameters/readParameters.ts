@@ -46,8 +46,7 @@ export function readOneParameter(
         }
     }
 
-    const lastChar = parameterName[parameterName.length - 1];
-    const isExtended = lastChar == "*";
+    const isExtended = Parameter.isExtendedName(parameterName);
 
     // No whitespace is allowed
     // https://datatracker.ietf.org/doc/html/rfc9110#section-5.6.6

@@ -16,14 +16,11 @@ export async function writeOneParameter(param: Parameter): Promise<string> {
         );
     }
 
-    const lastLetter = param.name[param.name.length - 1];
-    const isExtended = lastLetter == "*";
-
     res.push("; ");
     res.push(param.name);
     res.push("=");
 
-    if (isExtended) {
+    if (param.isExtended) {
         // note that param.charset is ignored as only utf-8 is supported
         if (param.charset !== undefined && param.charset !== "utf-8") {
             throw new Error(`Charset ${param.charset} not supported.`);

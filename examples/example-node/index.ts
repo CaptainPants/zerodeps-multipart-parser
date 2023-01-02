@@ -17,7 +17,7 @@ const handlers: Record<string, http.RequestListener<typeof http.IncomingMessage,
           <button id="button">Test</button>
           <div id="log" style="white-space: pre;"></div>
           <script type="application/javascript">
-            zerodepsMultipartParser.polyfills.minimum();
+            zerodepsMultipartParser.polyfill_minimum();
 
             function assert(condition, message) {
                 if (!condition) {

@@ -4,16 +4,16 @@ To use this library with IE11 you will need a Promise polyfill.
 
 Use:
 ```typescript
-import { polyfills } from '@captainpants/zerodeps-multipart-parser';
+import { polyfill_Promise } from '@captainpants/zerodeps-multipart-parser';
 
-polyfills.Promise();
+polyfill_Promise();
 ```
 
 or
 ```typescript
-import { polyfills } from '@captainpants/zerodeps-multipart-parser';
+import { polyfill_minimum } from '@captainpants/zerodeps-multipart-parser';
 
-polyfills.minimum();
+polyfill_minimum();
 ```
 
 ## AbortController and AbortSignal
@@ -21,9 +21,9 @@ This is required in order to allow aborting http requests in progress. If you ar
 
 To import:
 ```typescript
-import { polyfills } from '@captainpants/zerodeps-multipart-parser';
+import { polyfill_AbortController } from '@captainpants/zerodeps-multipart-parser';
 
-polyfills.AbortController();
+polyfill_AbortController();
 ```
 
 This includes a polyfill for EventTarget that currently isn't imported into the global namespace.

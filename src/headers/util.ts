@@ -21,7 +21,7 @@ export function isMultipartMediaType(mediaType: string | undefined) {
     return startsWith(mediaType, "multipart/");
 }
 
-export function isValidParameterValue(value: string) {
+export function isValidNonExtendedParameterValue(value: string) {
     for (let i = 0; i < value.length; ++i) {
         if (!isAttrChar(value[i])) {
             return false;

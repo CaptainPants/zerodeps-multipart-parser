@@ -228,3 +228,16 @@ export class AbortSignalPolyfill extends EventTargetPolyfill {
         return res.signal;
     }
 }
+
+export function polyfill_AbortController(overwrite = false) {
+    if (overwrite || typeof window.AbortController === "undefined") {
+        window.AbortController = AbortControllerPolyfill;
+        window.AbortSignal = AbortSignalPolyfill;
+    }
+}
+
+export function polyfill_EventTarget(overwrite = false) {
+    if (overwrite || typeof window.EventTarget === "undefined") {
+        window.EventTarget = EventTargetPolyfill;
+    }
+}

@@ -29,6 +29,15 @@ export class Parameter {
         return this._lowerCaseName;
     }
 
+    get isExtended() { 
+        return Parameter.isExtendedName(this.name);
+    }
+
+    public static isExtendedName(name: string) {
+        const lastLetter = name[name.length - 1];
+        return lastLetter == "*";
+    }
+
     value: string;
 
     /**

@@ -263,3 +263,10 @@ function processResult<TResult>(
         reject(err);
     }
 }
+
+export function polyfill_Promise(overwrite = false) {
+    if (overwrite || typeof window.Promise === "undefined") {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any -- Missing allSettled implementation and 'species' symbol parameter
+        window.Promise = PromisePolyfill as any;
+    }
+}
